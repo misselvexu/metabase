@@ -33,7 +33,7 @@ export const LabelContainer = styled.div`
 `;
 
 export const Label = styled.span`
-  font-weight: 900;
+  font-weight: bold;
   font-size: 1em;
 `;
 
