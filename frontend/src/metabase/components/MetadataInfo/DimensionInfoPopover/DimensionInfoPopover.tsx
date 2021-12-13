@@ -5,7 +5,8 @@ import Dimension from "metabase-lib/lib/Dimension";
 import TippyPopver, {
   ITippyPopoverProps,
 } from "metabase/components/Popover/TippyPopover";
-import DimensionInfo from "metabase/components/MetadataInfo/DimensionInfo";
+
+import { WidthBoundDimensionInfo } from "./DimensionInfoPopover.styled";
 
 export const POPOVER_DELAY: [number, number] = [1000, 300];
 
@@ -26,7 +27,7 @@ function DimensionInfoPopover({ dimension, children, placement }: Props) {
       delay={POPOVER_DELAY}
       interactive
       placement={placement || "left-start"}
-      content={<DimensionInfo dimension={dimension} />}
+      content={<WidthBoundDimensionInfo dimension={dimension} />}
     >
       {children}
     </TippyPopver>
