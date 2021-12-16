@@ -50,3 +50,15 @@ export const InvertedColorRelativeSizeIcon = styled(RelativeSizeIcon)`
   border-radius: ${space(0)};
   padding: ${space(0)};
 `;
+
+export const Table = styled.table`
+  font-size: 12.8px;
+
+  th {
+    font-weight: normal;
+  }
+
+  td {
+    font-weight: bold;
+  }
+`;
