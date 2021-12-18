@@ -86,7 +86,9 @@ export type SettingName =
   | "cloud-gateway-ips"
   | "snowplow-enabled"
   | "snowplow-url"
-  | "engine-deprecation-notice-version";
+  | "engine-deprecation-notice-version"
+  | "premium-embedding-token"
+  | "metabase-store-managed";
 
 type SettingsMap = Record<SettingName, any>; // provides access to Metabase application settings
 
@@ -152,6 +154,10 @@ class Settings {
     return this.get("is-hosted?");
   }
 
+  isStoreManaged(): boolean {
+    return this.get("metabase-store-managed");
+  }
+
   cloudGatewayIps(): string[] {
     return this.get("cloud-gateway-ips") || [];
   }
@@ -198,6 +204,10 @@ class Settings {
 
   engineDeprecationNoticeEnabled() {
     return this.currentVersion() !== this.engineDeprecationNoticeVersion();
+  }
+
+  license() {
+    return this.get("premium-embedding-token");
   }
 
   formattingOptions() {
